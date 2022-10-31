@@ -112,6 +112,12 @@ if (isNaN(passwordLength)) {
     return
   }
 
+  // These confirmation prompts allow the user to choose which array of character types they would like to include in their password.
+  const userWantsLowercasedCharacters = window.confirm("Would you like to include lowercase in your password?")
+  const userWantsNumericCharacters = window.confirm("Would you like to include numeric characters in your password?")
+  const userWantsSpecialCharacters = window.confirm("Would you like to include special characters in your password?")
+  const userWantsUppercaseCharacters = window.confirm("Would you like to include uppercse in your password?")
+
 // Write password to the #password input
 function writePassword() {
   const password = generatePassword();
