@@ -190,3 +190,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// source:
+// https://www.youtube.com/watch?v=JheVaV6bPvE&t=2106s
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+// https://www.w3schools.com/jsref/met_win_prompt.asp
