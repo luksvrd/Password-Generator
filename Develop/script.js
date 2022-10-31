@@ -99,14 +99,14 @@ function generatePassword() {
   // 'parseInt' is taking any sting value from the userInput and tunrning it into a number
   const passwordLength = parseInt(userInput)
 
-  // if passwordLength isNaN (is it Not a Number) then user will be prompted with an alert and javascript will return out of the funciton. Preventing the rest of the code from running.
+  // 'if' passwordLength 'isNaN' (is it Not a Number) then user will be prompted with an alert and javascript will return out of the funciton. Preventing the rest of the code from running.
   // The following 2 'if' statements are separated so that we know which condition returned false.
 if (isNaN(passwordLength)) {
   window.alert("That is not a number...")
   return
   }
 
-  // If the user entered a number too big or too small, this if statement will prompt them with an alert and prevent the rest of the code from running.
+  // If the user entered a number too big or too small, this 'if' statement will prompt them with an alert and prevent the rest of the code from running.
   if (passwordLength < 8 || passwordLength > 128) {
     window.alert("Password length must be between 8 and 128 characters")
     return
@@ -117,6 +117,25 @@ if (isNaN(passwordLength)) {
   const userWantsNumericCharacters = window.confirm("Would you like to include numeric characters in your password?")
   const userWantsSpecialCharacters = window.confirm("Would you like to include special characters in your password?")
   const userWantsUppercaseCharacters = window.confirm("Would you like to include uppercse in your password?")
+
+  // The purpose of this Cart is to create an array comprised of any of the 4 character type arrays that the user chose.
+// Starts out as an empty array and fills up as the user reacts to the prompts.
+const characterCart = []
+
+// These 'if' statements react to the boolean true or false value from each charater type confirmation prompt.
+// If true, the '.push' will add the chosen character type arrays to the Cart so that the code can index it and get random characters
+  if (userWantsLowercasedCharacters === true) {
+    characterCart.push(lowerCasedCharacters)
+  }
+  if (userWantsNumericCharacters === true) {
+    characterCart.push(numericCharacters)
+  }
+  if (userWantsSpecialCharacters === true) {
+    characterCart.push(specialCharacters)
+  }
+  if (userWantsUppercaseCharacters === true) {
+    characterCart.push(upperCasedCharacters)
+  }
 
 // Write password to the #password input
 function writePassword() {
