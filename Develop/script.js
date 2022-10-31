@@ -142,6 +142,21 @@ const characterCart = []
   if (characterCart.length === 0) {
     characterCart.push(lowerCasedCharacters)
   }
+
+// Purpose of this function is to generate random integers ranging from min to max and return them to where they were called.
+// Math.floor drops the decimal point from all numbers
+// If max is not defined, assume we want range from 0 to min
+function randomInt(min, max) {
+  if (!max) {
+    max = min
+    min = 0
+  }
+
+  //  Interpolates random value
+  const rand = Math.random()
+  return Math.floor(min*(1 - rand) + rand*max)
+}
+
 // Write password to the #password input
 function writePassword() {
   const password = generatePassword();
