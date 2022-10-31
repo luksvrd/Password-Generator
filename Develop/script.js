@@ -137,6 +137,11 @@ const characterCart = []
     characterCart.push(upperCasedCharacters)
   }
 
+    // This is the default category for code to index from if the user did not choose any character array during the confirmation prompts.
+  // If the array or 'Cart' is empty, go ahead and push lowerCasedCharacters array
+  if (characterCart.length === 0) {
+    characterCart.push(lowerCasedCharacters)
+  }
 // Write password to the #password input
 function writePassword() {
   const password = generatePassword();
