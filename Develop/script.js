@@ -122,7 +122,7 @@ if (isNaN(passwordLength)) {
 // Starts out as an empty array and fills up as the user reacts to the prompts.
 const characterCart = []
 
-// These 'if' statements react to the boolean true or false value from each charater type confirmation prompt.
+// These 'if' statements react to the boolean true or false value from each character type confirmation prompt.
 // If true, the '.push' will add the chosen character type arrays to the Cart so that the code can index it and get random characters
   if (userWantsLowercasedCharacters === true) {
     characterCart.push(lowerCasedCharacters)
@@ -143,7 +143,7 @@ const characterCart = []
     characterCart.push(lowerCasedCharacters)
   }
 
-// Purpose of this function is to generate random integers ranging from min to max and return them to where they were called.
+// Purpose of this function is to generate random integers ranging from min to max and return them to where they were called. (line 164 and 174)
 // Math.floor drops the decimal point from all numbers
 // If max is not defined, assume we want range from 0 to min
 function randomInt(min, max) {
@@ -155,6 +155,28 @@ function randomInt(min, max) {
   //  Interpolates random value
   const rand = Math.random()
   return Math.floor(min*(1 - rand) + rand*max)
+}
+
+// Purpose is to get a random item from a random position in the array.
+function getRandomItem(list) {
+  return list[randomInt(list.length)]
+}
+
+  // This empty string is what we'll be adding a random characters to after each iteration of the 'for' loop.
+  // Using 'let' because the value will change
+  let generatedPassword = ""
+
+  for (i = 0; i < passwordLength; i++) {
+    // This 'randomList' is a random array of the 4 possible character type arrays
+    const randomList = getRandomItem(characterCart)
+    // This grabs a random character from the above 'randomList'
+    const randomChar = getRandomItem(randomList)
+    // Take 'generatedPassword' and add to itself the 'randomChar' that we created
+    generatedPassword += randomChar
+  }
+  // Exit the function and return the generateedPassword result where it was initially called (line 188)
+  return generatedPassword
+
 }
 
 // Write password to the #password input
