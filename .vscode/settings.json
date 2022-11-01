@@ -11,5 +11,6 @@
   "files.autoSave": "onFocusChange",
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
-  "workbench.view.alwaysShowHeaderActions": true
+  "workbench.view.alwaysShowHeaderActions": true,
+  "liveServer.settings.port": 5501
 }
