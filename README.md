@@ -11,7 +11,7 @@ This website prompts users to chose a password length between 8 and 128 characte
 
 ## WEBSITE
 https://luksvrd.github.io/Password-Generator/
-![Password Generator](/Assets/websiteScreenshot.png)
+![Password Generator](/Assets/Screenshot.png)
 
 ## CONTRIBUTIONS
 Made by Lukas Virden
